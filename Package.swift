@@ -1,5 +1,5 @@
 // swift-tools-version: 6.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// Forked: enable eSpeakNG + fix mlx-swift audio corruption (PR #29)
 
 import PackageDescription
 
@@ -16,8 +16,8 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(url: "https://github.com/ml-explore/mlx-swift", exact: "0.30.2"),
-    // .package(url: "https://github.com/mlalma/eSpeakNGSwift", from: "1.0.1"),
+    .package(url: "https://github.com/ml-explore/mlx-swift", from: "0.30.6"),
+    .package(url: "https://github.com/guidove/eSpeakNGSwift", branch: "main"),
     .package(url: "https://github.com/mlalma/MisakiSwift", exact: "1.0.6"),
     .package(url: "https://github.com/mlalma/MLXUtilsLibrary.git", exact: "0.0.6")
   ],
@@ -29,7 +29,7 @@ let package = Package(
         .product(name: "MLXNN", package: "mlx-swift"),
         .product(name: "MLXRandom", package: "mlx-swift"),
         .product(name: "MLXFFT", package: "mlx-swift"),
-        // .product(name: "eSpeakNGLib", package: "eSpeakNGSwift"),
+        .product(name: "eSpeakNGLib", package: "eSpeakNGSwift"),
         .product(name: "MisakiSwift", package: "MisakiSwift"),
         .product(name: "MLXUtilsLibrary", package: "MLXUtilsLibrary")
       ],
