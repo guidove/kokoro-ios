@@ -36,4 +36,9 @@ public final class VoiceLoader {
     public var voiceNames: [String] {
         voices.keys.map { String($0.split(separator: ".")[0]) }.sorted()
     }
+
+    /// Clear MLX GPU memory cache to prevent OOM on iPhone
+    public static func clearGPUCache() {
+        GPU.clearCache()
+    }
 }
